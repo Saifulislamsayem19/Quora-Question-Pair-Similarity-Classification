@@ -22,10 +22,33 @@ The code for this project is implemented in a Jupyter Notebook (`quora_question_
 * **Model Tuning:** Hyperparameter optimization for the ANN model using Keras Tuner.
 * **Prediction and Submission:** Generating predictions on the test set and creating a submission file.
 
-## Performance Evaluation Report
+## Performance Evaluation
 
-The performance evaluation report is included in the notebook itself (as markdown cells) and summarizes the results of the model evaluation.  It includes a table of metrics for each model, confusion matrices, and a brief analysis of the results.  Key findings are summarized below:
+Model performance was evaluated on a held-out validation set using the following metrics:
 
-* **ANN (Tuned):** Achieved the highest accuracy (e.g., 80.87%) and AUC-ROC (e.g., 0.8777) after hyperparameter tuning. It showed a good balance between precision (e.g., 80.05%) and recall (e.g., 65.21%).
-* **Logistic Regression:** Served as a baseline model with an accuracy of (e.g., 73.80%) and AUC-ROC of (e.g., 0.7798).
-* **LSTM:**  Provided reasonable performance, although slightly lower than the tuned ANN, with an accuracy of (e.g., 76.20%) and AUC-ROC of (e.g., 0.8355).
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* AUC-ROC
+* Confusion Matrix
+
+The following table summarizes the performance of the trained models on the validation set:
+
+| Model                 | Accuracy | Precision | Recall  | F1-score |
+|-----------------------|----------|-----------|---------|----------|
+| LSTM                  | 75.86%   | 0.6365    | 0.8057  | 0.7112   |
+| Logistic Regression   | 71.40%   | 0.5980    | 0.6860  | 0.6390   |
+| ANN                   | 79.93%   | 0.7198    | 0.7469  | 0.7331   |
+| Best ANN (Keras Tuner)| 81.11%   | 0.7531    | 0.7262  | 0.7394   |
+
+The Best ANN model, optimized using Keras Tuner, achieved the highest accuracy of 81.11%.  Further details on model performance, including confusion matrices and AUC-ROC curves, can be found in the Jupyter Notebook.
+
+## Requirements
+
+The following libraries are required to run the code.  It is **highly recommended** to create a virtual environment to manage dependencies:
+
+```bash
+python3 -m venv .venv  # Create a virtual environment (Linux/macOS)
+.venv\Scripts\activate  # Activate the virtual environment (Windows)
+source .venv/bin/activate # Activate the virtual environment (Linux/macOS)
