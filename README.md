@@ -1,6 +1,6 @@
 # Quora Question Pair Similarity Classification
 
-This repository contains code and a report for a project focused on identifying duplicate question pairs using machine learning. The project utilizes the Quora Question Pairs dataset and explores several models, including Artificial Neural Networks (ANN), Logistic Regression, and Long Short-Term Memory (LSTM) networks.
+This repository contains the code and report for a project on question pair similarity classification. The goal is to classify pairs of questions as either "duplicate" (semantically similar) or "not duplicate" using machine learning models. The project utilizes the Quora Question Pairs dataset and explores several models, including Artificial Neural Networks (ANN), Logistic Regression, and Long Short-Term Memory (LSTM) networks.  A key focus of this project is hyperparameter tuning and optimization of the ANN model using RandomizedSearchCV and Keras Tuner.
 
 ## Project Overview
 
@@ -19,8 +19,20 @@ The code for this project is implemented in a Jupyter Notebook (`quora_question_
 * **Feature Extraction:**  Converting text data into numerical features using TF-IDF for Logistic Regression and ANN, and tokenization/padding for LSTM.
 * **Model Building and Training:** Training different machine learning models (ANN, Logistic Regression, LSTM).
 * **Model Evaluation:** Evaluating model performance using metrics like accuracy, precision, recall, F1-score, AUC-ROC, and confusion matrices.  *See the Performance Evaluation Report below for detailed results.*
-* **Model Tuning:** Hyperparameter optimization for the ANN model using Keras Tuner.
+* **Hyperparameter Tuning and Optimization:**  A critical component of this project is the optimization of the ANN model.  Two techniques were used:
+    * **RandomizedSearchCV:**  Exploring a range of hyperparameter combinations to find promising settings.
+    * **Keras Tuner:**  A more efficient and automated hyperparameter optimization technique to refine the ANN model's architecture and training parameters.
 * **Prediction and Submission:** Generating predictions on the test set and creating a submission file.
+
+## Model Tuning and Hyperparameter Optimization
+
+To improve the performance of the Artificial Neural Network (ANN) model, hyperparameter tuning was performed using two techniques:
+
+* **RandomizedSearchCV:** This technique was used to search for optimal hyperparameters within a defined search space, including the number of neurons, dropout rate, activation function, optimizer, batch size, and epochs.
+
+* **Keras Tuner:** Keras Tuner was employed to further optimize the ANN model's hyperparameters. It provides a more efficient and flexible approach to hyperparameter tuning compared to RandomizedSearchCV.
+
+The tuning process helped to identify the best combination of hyperparameters for the ANN model, leading to improved performance on the validation set.
 
 ## Performance Evaluation
 
